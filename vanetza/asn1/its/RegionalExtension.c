@@ -128,14 +128,14 @@ select_Reg_MapData_regExtValue_type(const asn_TYPE_descriptor_t *parent_type, co
 	size_t for_column = 1; /* &Type */
 	size_t row, presence_index = 0;
 	const long *constraining_value = (const long *)((const char *)parent_sptr + offsetof(struct Reg_MapData, regionId));
-	
+
 	for(row=0; row < itable->rows_count; row++) {
 	    const asn_ioc_cell_t *constraining_cell = &itable->rows[row * itable->columns_count + constraining_column];
 	    const asn_ioc_cell_t *type_cell = &itable->rows[row * itable->columns_count + for_column];
-	
+
 	    if(type_cell->cell_kind == aioc__undefined)
 	        continue;
-	
+
 	    presence_index++;
 	    if(constraining_cell->type_descriptor->op->compare_struct(constraining_cell->type_descriptor, constraining_value, constraining_cell->value_sptr) == 0) {
 	        result.type_descriptor = type_cell->type_descriptor;
@@ -143,7 +143,7 @@ select_Reg_MapData_regExtValue_type(const asn_TYPE_descriptor_t *parent_type, co
 	        break;
 	    }
 	}
-	
+
 	return result;
 }
 
@@ -170,16 +170,16 @@ static int
 memb_regionId_constraint_4(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	long value;
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
+
 	value = *(const long *)sptr;
-	
+
 	if((value >= 0L && value <= 255L)) {
 		/* Constraint check succeeded */
 		return 0;
@@ -194,19 +194,19 @@ memb_regionId_constraint_4(const asn_TYPE_descriptor_t *td, const void *sptr,
 static int
 memb_regExtValue_constraint_4(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
-	
+
+
 	if(1 /* No applicable constraints whatsoever */) {
 		/* Nothing is here. See below */
 	}
-	
+
 	return td->encoding_constraints.general_constraints(td, sptr, ctfailcb, app_key);
 }
 
@@ -214,16 +214,16 @@ static int
 memb_regionId_constraint_7(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	long value;
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
+
 	value = *(const long *)sptr;
-	
+
 	if((value >= 0L && value <= 255L)) {
 		/* Constraint check succeeded */
 		return 0;
@@ -238,19 +238,19 @@ memb_regionId_constraint_7(const asn_TYPE_descriptor_t *td, const void *sptr,
 static int
 memb_regExtValue_constraint_7(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
-	
+
+
 	if(1 /* No applicable constraints whatsoever */) {
 		/* Nothing is here. See below */
 	}
-	
+
 	return td->encoding_constraints.general_constraints(td, sptr, ctfailcb, app_key);
 }
 
@@ -258,16 +258,16 @@ static int
 memb_regionId_constraint_10(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	long value;
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
+
 	value = *(const long *)sptr;
-	
+
 	if((value >= 0L && value <= 255L)) {
 		/* Constraint check succeeded */
 		return 0;
@@ -282,19 +282,19 @@ memb_regionId_constraint_10(const asn_TYPE_descriptor_t *td, const void *sptr,
 static int
 memb_regExtValue_constraint_10(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
-	
+
+
 	if(1 /* No applicable constraints whatsoever */) {
 		/* Nothing is here. See below */
 	}
-	
+
 	return td->encoding_constraints.general_constraints(td, sptr, ctfailcb, app_key);
 }
 
@@ -302,16 +302,16 @@ static int
 memb_regionId_constraint_13(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	long value;
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
+
 	value = *(const long *)sptr;
-	
+
 	if((value >= 0L && value <= 255L)) {
 		/* Constraint check succeeded */
 		return 0;
@@ -326,19 +326,19 @@ memb_regionId_constraint_13(const asn_TYPE_descriptor_t *td, const void *sptr,
 static int
 memb_regExtValue_constraint_13(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
-	
+
+
 	if(1 /* No applicable constraints whatsoever */) {
 		/* Nothing is here. See below */
 	}
-	
+
 	return td->encoding_constraints.general_constraints(td, sptr, ctfailcb, app_key);
 }
 
@@ -346,16 +346,16 @@ static int
 memb_regionId_constraint_16(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	long value;
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
+
 	value = *(const long *)sptr;
-	
+
 	if((value >= 0L && value <= 255L)) {
 		/* Constraint check succeeded */
 		return 0;
@@ -370,19 +370,19 @@ memb_regionId_constraint_16(const asn_TYPE_descriptor_t *td, const void *sptr,
 static int
 memb_regExtValue_constraint_16(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
-	
+
+
 	if(1 /* No applicable constraints whatsoever */) {
 		/* Nothing is here. See below */
 	}
-	
+
 	return td->encoding_constraints.general_constraints(td, sptr, ctfailcb, app_key);
 }
 
@@ -390,16 +390,16 @@ static int
 memb_regionId_constraint_19(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	long value;
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
+
 	value = *(const long *)sptr;
-	
+
 	if((value >= 0L && value <= 255L)) {
 		/* Constraint check succeeded */
 		return 0;
@@ -414,19 +414,19 @@ memb_regionId_constraint_19(const asn_TYPE_descriptor_t *td, const void *sptr,
 static int
 memb_regExtValue_constraint_19(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
-	
+
+
 	if(1 /* No applicable constraints whatsoever */) {
 		/* Nothing is here. See below */
 	}
-	
+
 	return td->encoding_constraints.general_constraints(td, sptr, ctfailcb, app_key);
 }
 
@@ -434,16 +434,16 @@ static int
 memb_regionId_constraint_22(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	long value;
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
+
 	value = *(const long *)sptr;
-	
+
 	if((value >= 0L && value <= 255L)) {
 		/* Constraint check succeeded */
 		return 0;
@@ -463,14 +463,14 @@ select_Reg_ConnectionManeuverAssist_regExtValue_type(const asn_TYPE_descriptor_t
 	size_t for_column = 1; /* &Type */
 	size_t row, presence_index = 0;
 	const long *constraining_value = (const long *)((const char *)parent_sptr + offsetof(struct Reg_ConnectionManeuverAssist, regionId));
-	
+
 	for(row=0; row < itable->rows_count; row++) {
 	    const asn_ioc_cell_t *constraining_cell = &itable->rows[row * itable->columns_count + constraining_column];
 	    const asn_ioc_cell_t *type_cell = &itable->rows[row * itable->columns_count + for_column];
-	
+
 	    if(type_cell->cell_kind == aioc__undefined)
 	        continue;
-	
+
 	    presence_index++;
 	    if(constraining_cell->type_descriptor->op->compare_struct(constraining_cell->type_descriptor, constraining_value, constraining_cell->value_sptr) == 0) {
 	        result.type_descriptor = type_cell->type_descriptor;
@@ -478,26 +478,26 @@ select_Reg_ConnectionManeuverAssist_regExtValue_type(const asn_TYPE_descriptor_t
 	        break;
 	    }
 	}
-	
+
 	return result;
 }
 
 static int
 memb_regExtValue_constraint_22(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
-	
+
+
 	if(1 /* No applicable constraints whatsoever */) {
 		/* Nothing is here. See below */
 	}
-	
+
 	return td->encoding_constraints.general_constraints(td, sptr, ctfailcb, app_key);
 }
 
@@ -505,16 +505,16 @@ static int
 memb_regionId_constraint_25(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	long value;
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
+
 	value = *(const long *)sptr;
-	
+
 	if((value >= 0L && value <= 255L)) {
 		/* Constraint check succeeded */
 		return 0;
@@ -534,14 +534,14 @@ select_Reg_GenericLane_regExtValue_type(const asn_TYPE_descriptor_t *parent_type
 	size_t for_column = 1; /* &Type */
 	size_t row, presence_index = 0;
 	const long *constraining_value = (const long *)((const char *)parent_sptr + offsetof(struct Reg_GenericLane, regionId));
-	
+
 	for(row=0; row < itable->rows_count; row++) {
 	    const asn_ioc_cell_t *constraining_cell = &itable->rows[row * itable->columns_count + constraining_column];
 	    const asn_ioc_cell_t *type_cell = &itable->rows[row * itable->columns_count + for_column];
-	
+
 	    if(type_cell->cell_kind == aioc__undefined)
 	        continue;
-	
+
 	    presence_index++;
 	    if(constraining_cell->type_descriptor->op->compare_struct(constraining_cell->type_descriptor, constraining_value, constraining_cell->value_sptr) == 0) {
 	        result.type_descriptor = type_cell->type_descriptor;
@@ -549,26 +549,26 @@ select_Reg_GenericLane_regExtValue_type(const asn_TYPE_descriptor_t *parent_type
 	        break;
 	    }
 	}
-	
+
 	return result;
 }
 
 static int
 memb_regExtValue_constraint_25(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
-	
+
+
 	if(1 /* No applicable constraints whatsoever */) {
 		/* Nothing is here. See below */
 	}
-	
+
 	return td->encoding_constraints.general_constraints(td, sptr, ctfailcb, app_key);
 }
 
@@ -576,16 +576,16 @@ static int
 memb_regionId_constraint_28(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	long value;
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
+
 	value = *(const long *)sptr;
-	
+
 	if((value >= 0L && value <= 255L)) {
 		/* Constraint check succeeded */
 		return 0;
@@ -600,19 +600,19 @@ memb_regionId_constraint_28(const asn_TYPE_descriptor_t *td, const void *sptr,
 static int
 memb_regExtValue_constraint_28(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
-	
+
+
 	if(1 /* No applicable constraints whatsoever */) {
 		/* Nothing is here. See below */
 	}
-	
+
 	return td->encoding_constraints.general_constraints(td, sptr, ctfailcb, app_key);
 }
 
@@ -620,16 +620,16 @@ static int
 memb_regionId_constraint_31(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	long value;
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
+
 	value = *(const long *)sptr;
-	
+
 	if((value >= 0L && value <= 255L)) {
 		/* Constraint check succeeded */
 		return 0;
@@ -649,14 +649,14 @@ select_Reg_IntersectionState_regExtValue_type(const asn_TYPE_descriptor_t *paren
 	size_t for_column = 1; /* &Type */
 	size_t row, presence_index = 0;
 	const long *constraining_value = (const long *)((const char *)parent_sptr + offsetof(struct Reg_IntersectionState, regionId));
-	
+
 	for(row=0; row < itable->rows_count; row++) {
 	    const asn_ioc_cell_t *constraining_cell = &itable->rows[row * itable->columns_count + constraining_column];
 	    const asn_ioc_cell_t *type_cell = &itable->rows[row * itable->columns_count + for_column];
-	
+
 	    if(type_cell->cell_kind == aioc__undefined)
 	        continue;
-	
+
 	    presence_index++;
 	    if(constraining_cell->type_descriptor->op->compare_struct(constraining_cell->type_descriptor, constraining_value, constraining_cell->value_sptr) == 0) {
 	        result.type_descriptor = type_cell->type_descriptor;
@@ -664,26 +664,26 @@ select_Reg_IntersectionState_regExtValue_type(const asn_TYPE_descriptor_t *paren
 	        break;
 	    }
 	}
-	
+
 	return result;
 }
 
 static int
 memb_regExtValue_constraint_31(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
-	
+
+
 	if(1 /* No applicable constraints whatsoever */) {
 		/* Nothing is here. See below */
 	}
-	
+
 	return td->encoding_constraints.general_constraints(td, sptr, ctfailcb, app_key);
 }
 
@@ -691,16 +691,16 @@ static int
 memb_regionId_constraint_34(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	long value;
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
+
 	value = *(const long *)sptr;
-	
+
 	if((value >= 0L && value <= 255L)) {
 		/* Constraint check succeeded */
 		return 0;
@@ -720,14 +720,14 @@ select_Reg_LaneAttributes_regExtValue_type(const asn_TYPE_descriptor_t *parent_t
 	size_t for_column = 1; /* &Type */
 	size_t row, presence_index = 0;
 	const long *constraining_value = (const long *)((const char *)parent_sptr + offsetof(struct Reg_LaneAttributes, regionId));
-	
+
 	for(row=0; row < itable->rows_count; row++) {
 	    const asn_ioc_cell_t *constraining_cell = &itable->rows[row * itable->columns_count + constraining_column];
 	    const asn_ioc_cell_t *type_cell = &itable->rows[row * itable->columns_count + for_column];
-	
+
 	    if(type_cell->cell_kind == aioc__undefined)
 	        continue;
-	
+
 	    presence_index++;
 	    if(constraining_cell->type_descriptor->op->compare_struct(constraining_cell->type_descriptor, constraining_value, constraining_cell->value_sptr) == 0) {
 	        result.type_descriptor = type_cell->type_descriptor;
@@ -735,26 +735,26 @@ select_Reg_LaneAttributes_regExtValue_type(const asn_TYPE_descriptor_t *parent_t
 	        break;
 	    }
 	}
-	
+
 	return result;
 }
 
 static int
 memb_regExtValue_constraint_34(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
-	
+
+
 	if(1 /* No applicable constraints whatsoever */) {
 		/* Nothing is here. See below */
 	}
-	
+
 	return td->encoding_constraints.general_constraints(td, sptr, ctfailcb, app_key);
 }
 
@@ -762,16 +762,16 @@ static int
 memb_regionId_constraint_37(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	long value;
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
+
 	value = *(const long *)sptr;
-	
+
 	if((value >= 0L && value <= 255L)) {
 		/* Constraint check succeeded */
 		return 0;
@@ -786,19 +786,19 @@ memb_regionId_constraint_37(const asn_TYPE_descriptor_t *td, const void *sptr,
 static int
 memb_regExtValue_constraint_37(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
-	
+
+
 	if(1 /* No applicable constraints whatsoever */) {
 		/* Nothing is here. See below */
 	}
-	
+
 	return td->encoding_constraints.general_constraints(td, sptr, ctfailcb, app_key);
 }
 
@@ -806,16 +806,16 @@ static int
 memb_regionId_constraint_40(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	long value;
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
+
 	value = *(const long *)sptr;
-	
+
 	if((value >= 0L && value <= 255L)) {
 		/* Constraint check succeeded */
 		return 0;
@@ -835,14 +835,14 @@ select_Reg_MovementEvent_regExtValue_type(const asn_TYPE_descriptor_t *parent_ty
 	size_t for_column = 1; /* &Type */
 	size_t row, presence_index = 0;
 	const long *constraining_value = (const long *)((const char *)parent_sptr + offsetof(struct Reg_MovementEvent, regionId));
-	
+
 	for(row=0; row < itable->rows_count; row++) {
 	    const asn_ioc_cell_t *constraining_cell = &itable->rows[row * itable->columns_count + constraining_column];
 	    const asn_ioc_cell_t *type_cell = &itable->rows[row * itable->columns_count + for_column];
-	
+
 	    if(type_cell->cell_kind == aioc__undefined)
 	        continue;
-	
+
 	    presence_index++;
 	    if(constraining_cell->type_descriptor->op->compare_struct(constraining_cell->type_descriptor, constraining_value, constraining_cell->value_sptr) == 0) {
 	        result.type_descriptor = type_cell->type_descriptor;
@@ -850,26 +850,26 @@ select_Reg_MovementEvent_regExtValue_type(const asn_TYPE_descriptor_t *parent_ty
 	        break;
 	    }
 	}
-	
+
 	return result;
 }
 
 static int
 memb_regExtValue_constraint_40(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
-	
+
+
 	if(1 /* No applicable constraints whatsoever */) {
 		/* Nothing is here. See below */
 	}
-	
+
 	return td->encoding_constraints.general_constraints(td, sptr, ctfailcb, app_key);
 }
 
@@ -877,16 +877,16 @@ static int
 memb_regionId_constraint_43(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	long value;
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
+
 	value = *(const long *)sptr;
-	
+
 	if((value >= 0L && value <= 255L)) {
 		/* Constraint check succeeded */
 		return 0;
@@ -901,19 +901,19 @@ memb_regionId_constraint_43(const asn_TYPE_descriptor_t *td, const void *sptr,
 static int
 memb_regExtValue_constraint_43(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
-	
+
+
 	if(1 /* No applicable constraints whatsoever */) {
 		/* Nothing is here. See below */
 	}
-	
+
 	return td->encoding_constraints.general_constraints(td, sptr, ctfailcb, app_key);
 }
 
@@ -921,16 +921,16 @@ static int
 memb_regionId_constraint_46(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	long value;
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
+
 	value = *(const long *)sptr;
-	
+
 	if((value >= 0L && value <= 255L)) {
 		/* Constraint check succeeded */
 		return 0;
@@ -950,14 +950,14 @@ select_Reg_NodeAttributeSetXY_regExtValue_type(const asn_TYPE_descriptor_t *pare
 	size_t for_column = 1; /* &Type */
 	size_t row, presence_index = 0;
 	const long *constraining_value = (const long *)((const char *)parent_sptr + offsetof(struct Reg_NodeAttributeSetXY, regionId));
-	
+
 	for(row=0; row < itable->rows_count; row++) {
 	    const asn_ioc_cell_t *constraining_cell = &itable->rows[row * itable->columns_count + constraining_column];
 	    const asn_ioc_cell_t *type_cell = &itable->rows[row * itable->columns_count + for_column];
-	
+
 	    if(type_cell->cell_kind == aioc__undefined)
 	        continue;
-	
+
 	    presence_index++;
 	    if(constraining_cell->type_descriptor->op->compare_struct(constraining_cell->type_descriptor, constraining_value, constraining_cell->value_sptr) == 0) {
 	        result.type_descriptor = type_cell->type_descriptor;
@@ -965,26 +965,26 @@ select_Reg_NodeAttributeSetXY_regExtValue_type(const asn_TYPE_descriptor_t *pare
 	        break;
 	    }
 	}
-	
+
 	return result;
 }
 
 static int
 memb_regExtValue_constraint_46(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
-	
+
+
 	if(1 /* No applicable constraints whatsoever */) {
 		/* Nothing is here. See below */
 	}
-	
+
 	return td->encoding_constraints.general_constraints(td, sptr, ctfailcb, app_key);
 }
 
@@ -992,16 +992,16 @@ static int
 memb_regionId_constraint_49(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	long value;
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
+
 	value = *(const long *)sptr;
-	
+
 	if((value >= 0L && value <= 255L)) {
 		/* Constraint check succeeded */
 		return 0;
@@ -1016,19 +1016,19 @@ memb_regionId_constraint_49(const asn_TYPE_descriptor_t *td, const void *sptr,
 static int
 memb_regExtValue_constraint_49(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
-	
+
+
 	if(1 /* No applicable constraints whatsoever */) {
 		/* Nothing is here. See below */
 	}
-	
+
 	return td->encoding_constraints.general_constraints(td, sptr, ctfailcb, app_key);
 }
 
@@ -1036,16 +1036,16 @@ static int
 memb_regionId_constraint_52(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	long value;
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
+
 	value = *(const long *)sptr;
-	
+
 	if((value >= 0L && value <= 255L)) {
 		/* Constraint check succeeded */
 		return 0;
@@ -1065,14 +1065,14 @@ select_Reg_Position3D_regExtValue_type(const asn_TYPE_descriptor_t *parent_type,
 	size_t for_column = 1; /* &Type */
 	size_t row, presence_index = 0;
 	const long *constraining_value = (const long *)((const char *)parent_sptr + offsetof(struct Reg_Position3D, regionId));
-	
+
 	for(row=0; row < itable->rows_count; row++) {
 	    const asn_ioc_cell_t *constraining_cell = &itable->rows[row * itable->columns_count + constraining_column];
 	    const asn_ioc_cell_t *type_cell = &itable->rows[row * itable->columns_count + for_column];
-	
+
 	    if(type_cell->cell_kind == aioc__undefined)
 	        continue;
-	
+
 	    presence_index++;
 	    if(constraining_cell->type_descriptor->op->compare_struct(constraining_cell->type_descriptor, constraining_value, constraining_cell->value_sptr) == 0) {
 	        result.type_descriptor = type_cell->type_descriptor;
@@ -1080,26 +1080,26 @@ select_Reg_Position3D_regExtValue_type(const asn_TYPE_descriptor_t *parent_type,
 	        break;
 	    }
 	}
-	
+
 	return result;
 }
 
 static int
 memb_regExtValue_constraint_52(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
-	
+
+
 	if(1 /* No applicable constraints whatsoever */) {
 		/* Nothing is here. See below */
 	}
-	
+
 	return td->encoding_constraints.general_constraints(td, sptr, ctfailcb, app_key);
 }
 
@@ -1107,16 +1107,16 @@ static int
 memb_regionId_constraint_55(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	long value;
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
+
 	value = *(const long *)sptr;
-	
+
 	if((value >= 0L && value <= 255L)) {
 		/* Constraint check succeeded */
 		return 0;
@@ -1136,14 +1136,14 @@ select_Reg_RequestorDescription_regExtValue_type(const asn_TYPE_descriptor_t *pa
 	size_t for_column = 1; /* &Type */
 	size_t row, presence_index = 0;
 	const long *constraining_value = (const long *)((const char *)parent_sptr + offsetof(struct Reg_RequestorDescription, regionId));
-	
+
 	for(row=0; row < itable->rows_count; row++) {
 	    const asn_ioc_cell_t *constraining_cell = &itable->rows[row * itable->columns_count + constraining_column];
 	    const asn_ioc_cell_t *type_cell = &itable->rows[row * itable->columns_count + for_column];
-	
+
 	    if(type_cell->cell_kind == aioc__undefined)
 	        continue;
-	
+
 	    presence_index++;
 	    if(constraining_cell->type_descriptor->op->compare_struct(constraining_cell->type_descriptor, constraining_value, constraining_cell->value_sptr) == 0) {
 	        result.type_descriptor = type_cell->type_descriptor;
@@ -1151,26 +1151,26 @@ select_Reg_RequestorDescription_regExtValue_type(const asn_TYPE_descriptor_t *pa
 	        break;
 	    }
 	}
-	
+
 	return result;
 }
 
 static int
 memb_regExtValue_constraint_55(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
-	
+
+
 	if(1 /* No applicable constraints whatsoever */) {
 		/* Nothing is here. See below */
 	}
-	
+
 	return td->encoding_constraints.general_constraints(td, sptr, ctfailcb, app_key);
 }
 
@@ -1178,16 +1178,16 @@ static int
 memb_regionId_constraint_58(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	long value;
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
+
 	value = *(const long *)sptr;
-	
+
 	if((value >= 0L && value <= 255L)) {
 		/* Constraint check succeeded */
 		return 0;
@@ -1202,19 +1202,19 @@ memb_regionId_constraint_58(const asn_TYPE_descriptor_t *td, const void *sptr,
 static int
 memb_regExtValue_constraint_58(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
-	
+
+
 	if(1 /* No applicable constraints whatsoever */) {
 		/* Nothing is here. See below */
 	}
-	
+
 	return td->encoding_constraints.general_constraints(td, sptr, ctfailcb, app_key);
 }
 
@@ -1222,16 +1222,16 @@ static int
 memb_regionId_constraint_61(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	long value;
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
+
 	value = *(const long *)sptr;
-	
+
 	if((value >= 0L && value <= 255L)) {
 		/* Constraint check succeeded */
 		return 0;
@@ -1251,14 +1251,14 @@ select_Reg_RestrictionUserType_regExtValue_type(const asn_TYPE_descriptor_t *par
 	size_t for_column = 1; /* &Type */
 	size_t row, presence_index = 0;
 	const long *constraining_value = (const long *)((const char *)parent_sptr + offsetof(struct Reg_RestrictionUserType, regionId));
-	
+
 	for(row=0; row < itable->rows_count; row++) {
 	    const asn_ioc_cell_t *constraining_cell = &itable->rows[row * itable->columns_count + constraining_column];
 	    const asn_ioc_cell_t *type_cell = &itable->rows[row * itable->columns_count + for_column];
-	
+
 	    if(type_cell->cell_kind == aioc__undefined)
 	        continue;
-	
+
 	    presence_index++;
 	    if(constraining_cell->type_descriptor->op->compare_struct(constraining_cell->type_descriptor, constraining_value, constraining_cell->value_sptr) == 0) {
 	        result.type_descriptor = type_cell->type_descriptor;
@@ -1266,26 +1266,26 @@ select_Reg_RestrictionUserType_regExtValue_type(const asn_TYPE_descriptor_t *par
 	        break;
 	    }
 	}
-	
+
 	return result;
 }
 
 static int
 memb_regExtValue_constraint_61(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
-	
+
+
 	if(1 /* No applicable constraints whatsoever */) {
 		/* Nothing is here. See below */
 	}
-	
+
 	return td->encoding_constraints.general_constraints(td, sptr, ctfailcb, app_key);
 }
 
@@ -1293,16 +1293,16 @@ static int
 memb_regionId_constraint_64(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	long value;
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
+
 	value = *(const long *)sptr;
-	
+
 	if((value >= 0L && value <= 255L)) {
 		/* Constraint check succeeded */
 		return 0;
@@ -1317,19 +1317,19 @@ memb_regionId_constraint_64(const asn_TYPE_descriptor_t *td, const void *sptr,
 static int
 memb_regExtValue_constraint_64(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
-	
+
+
 	if(1 /* No applicable constraints whatsoever */) {
 		/* Nothing is here. See below */
 	}
-	
+
 	return td->encoding_constraints.general_constraints(td, sptr, ctfailcb, app_key);
 }
 
@@ -1337,16 +1337,16 @@ static int
 memb_regionId_constraint_67(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	long value;
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
+
 	value = *(const long *)sptr;
-	
+
 	if((value >= 0L && value <= 255L)) {
 		/* Constraint check succeeded */
 		return 0;
@@ -1361,19 +1361,19 @@ memb_regionId_constraint_67(const asn_TYPE_descriptor_t *td, const void *sptr,
 static int
 memb_regExtValue_constraint_67(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
-	
+
+
 	if(1 /* No applicable constraints whatsoever */) {
 		/* Nothing is here. See below */
 	}
-	
+
 	return td->encoding_constraints.general_constraints(td, sptr, ctfailcb, app_key);
 }
 
@@ -1381,16 +1381,16 @@ static int
 memb_regionId_constraint_70(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	long value;
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
+
 	value = *(const long *)sptr;
-	
+
 	if((value >= 0L && value <= 255L)) {
 		/* Constraint check succeeded */
 		return 0;
@@ -1405,19 +1405,19 @@ memb_regionId_constraint_70(const asn_TYPE_descriptor_t *td, const void *sptr,
 static int
 memb_regExtValue_constraint_70(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
-	
+
+
 	if(1 /* No applicable constraints whatsoever */) {
 		/* Nothing is here. See below */
 	}
-	
+
 	return td->encoding_constraints.general_constraints(td, sptr, ctfailcb, app_key);
 }
 
@@ -1425,16 +1425,16 @@ static int
 memb_regionId_constraint_73(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	long value;
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
+
 	value = *(const long *)sptr;
-	
+
 	if((value >= 0L && value <= 255L)) {
 		/* Constraint check succeeded */
 		return 0;
@@ -1449,19 +1449,19 @@ memb_regionId_constraint_73(const asn_TYPE_descriptor_t *td, const void *sptr,
 static int
 memb_regExtValue_constraint_73(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
-	
+
+
 	if(1 /* No applicable constraints whatsoever */) {
 		/* Nothing is here. See below */
 	}
-	
+
 	return td->encoding_constraints.general_constraints(td, sptr, ctfailcb, app_key);
 }
 
@@ -1469,16 +1469,16 @@ static int
 memb_regionId_constraint_76(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	long value;
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
+
 	value = *(const long *)sptr;
-	
+
 	if((value >= 0L && value <= 255L)) {
 		/* Constraint check succeeded */
 		return 0;
@@ -1493,19 +1493,19 @@ memb_regionId_constraint_76(const asn_TYPE_descriptor_t *td, const void *sptr,
 static int
 memb_regExtValue_constraint_76(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
-	
+
+
 	if(1 /* No applicable constraints whatsoever */) {
 		/* Nothing is here. See below */
 	}
-	
+
 	return td->encoding_constraints.general_constraints(td, sptr, ctfailcb, app_key);
 }
 
@@ -1513,16 +1513,16 @@ static int
 memb_regionId_constraint_79(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	long value;
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
+
 	value = *(const long *)sptr;
-	
+
 	if((value >= 0L && value <= 255L)) {
 		/* Constraint check succeeded */
 		return 0;
@@ -1542,14 +1542,14 @@ select_Reg_SignalStatusPackage_regExtValue_type(const asn_TYPE_descriptor_t *par
 	size_t for_column = 1; /* &Type */
 	size_t row, presence_index = 0;
 	const long *constraining_value = (const long *)((const char *)parent_sptr + offsetof(struct Reg_SignalStatusPackage, regionId));
-	
+
 	for(row=0; row < itable->rows_count; row++) {
 	    const asn_ioc_cell_t *constraining_cell = &itable->rows[row * itable->columns_count + constraining_column];
 	    const asn_ioc_cell_t *type_cell = &itable->rows[row * itable->columns_count + for_column];
-	
+
 	    if(type_cell->cell_kind == aioc__undefined)
 	        continue;
-	
+
 	    presence_index++;
 	    if(constraining_cell->type_descriptor->op->compare_struct(constraining_cell->type_descriptor, constraining_value, constraining_cell->value_sptr) == 0) {
 	        result.type_descriptor = type_cell->type_descriptor;
@@ -1557,26 +1557,26 @@ select_Reg_SignalStatusPackage_regExtValue_type(const asn_TYPE_descriptor_t *par
 	        break;
 	    }
 	}
-	
+
 	return result;
 }
 
 static int
 memb_regExtValue_constraint_79(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
-	
+
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value not given (%s:%d)",
 			td->name, __FILE__, __LINE__);
 		return -1;
 	}
-	
-	
+
+
 	if(1 /* No applicable constraints whatsoever */) {
 		/* Nothing is here. See below */
 	}
-	
+
 	return td->encoding_constraints.general_constraints(td, sptr, ctfailcb, app_key);
 }
 

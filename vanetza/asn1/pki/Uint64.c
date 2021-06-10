@@ -11,7 +11,7 @@ int
 Uint64_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 			asn_app_constraint_failed_f *ctfailcb, void *app_key) {
 	const INTEGER_t *st = (const INTEGER_t *)sptr;
-	uintmax_t value;
+	long value;
 	
 	if(!sptr) {
 		ASN__CTFAIL(app_key, td, sptr,
@@ -20,7 +20,7 @@ Uint64_constraint(const asn_TYPE_descriptor_t *td, const void *sptr,
 		return -1;
 	}
 	
-	if(asn_INTEGER2umax(st, &value)) {
+	if(asn_INTEGER2long(st, &value)) {
 		ASN__CTFAIL(app_key, td, sptr,
 			"%s: value too large (%s:%d)",
 			td->name, __FILE__, __LINE__);
@@ -49,7 +49,7 @@ static asn_oer_constraints_t asn_OER_type_Uint64_constr_1 CC_NOTUSED = {
 #endif  /* !defined(ASN_DISABLE_OER_SUPPORT) */
 #if !defined(ASN_DISABLE_UPER_SUPPORT) || !defined(ASN_DISABLE_APER_SUPPORT)
 asn_per_constraints_t asn_PER_type_Uint64_constr_1 CC_NOTUSED = {
-	{ APC_CONSTRAINED,	 64, -1,  0,  18446744073709551615ul }	/* (0..18446744073709551615) */,
+	{ APC_CONSTRAINED,	 64, -1,  0,  18446744073709551615 }	/* (0..18446744073709551615) */,
 	{ APC_UNCONSTRAINED,	-1, -1,  0,  0 },
 	0, 0	/* No PER value map */
 };
@@ -82,6 +82,6 @@ asn_TYPE_descriptor_t asn_DEF_Uint64 = {
 		Uint64_constraint
 	},
 	0, 0,	/* No members */
-	&asn_SPC_Uint64_specs_1	/* Manually added specifics */
+	0	/* No specifics */
 };
 
