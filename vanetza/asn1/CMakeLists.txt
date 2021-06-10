@@ -1,17 +1,17 @@
 set(_its_asn1_source_file "asn1c_its_sources.txt")
 set(_pki_asn1_source_file "asn1c_pki_sources.txt")
 set(_sec_asn1_source_file "asn1c_security_sources.txt")
-# set(_md_asn1_source_file "asn1c_md_sources.txt")
+set(_md_asn1_source_file "asn1c_md_sources.txt")
 set(_support_asn1_source_file "asn1c_support_sources.txt")
 
 set(_its_asn1_dir "${CMAKE_CURRENT_SOURCE_DIR}/its")
 set(_pki_asn1_dir "${CMAKE_CURRENT_SOURCE_DIR}/pki")
 set(_sec_asn1_dir "${CMAKE_CURRENT_SOURCE_DIR}/security")
-# set(_md_asn1_dir "${CMAKE_CURRENT_SOURCE_DIR}/md")
+set(_md_asn1_dir "${CMAKE_CURRENT_SOURCE_DIR}/md")
 set(_support_asn1_dir "${CMAKE_CURRENT_SOURCE_DIR}/support")
 
-option(VANETZA_ASN1_WITH_ASN1C "Enable asn1c targets" OFF)
-# option(VANETZA_ASN1_WITH_ASN1C "Enable asn1c targets" ON)
+# option(VANETZA_ASN1_WITH_ASN1C "Enable asn1c targets" OFF)
+option(VANETZA_ASN1_WITH_ASN1C "Enable asn1c targets" ON)
 if(VANETZA_ASN1_WITH_ASN1C)
     find_package(ASN1C 0.9.29 REQUIRED MODULE)
     set(ASN1C_FLAGS "-fcompound-names -fincludes-quoted -no-gen-example" CACHE STRING "asn1c compiler options")
@@ -39,9 +39,16 @@ if(VANETZA_ASN1_WITH_ASN1C)
         ${PROJECT_SOURCE_DIR}/asn1/IEEE1609dot2.asn
         ${PROJECT_SOURCE_DIR}/asn1/IEEE1609dot2BaseTypes.asn
     )
-    # set(_md_asn1_files
-    #     ${PROJECT_SOURCE_DIR}/asn1/TR103460v211-MisbehaviorReport.asn
-    # )
+    set(_md_asn1_files
+        ${PROJECT_SOURCE_DIR}/asn1/TR103460v211-MisbehaviorReport.asn
+        ${PROJECT_SOURCE_DIR}/asn1/TS102894-2v131-CDD.asn 
+        ${PROJECT_SOURCE_DIR}/asn1/TS103097v131.asn 
+        ${PROJECT_SOURCE_DIR}/asn1/IEEE1609dot2.asn 
+        ${PROJECT_SOURCE_DIR}/asn1/IEEE1609dot2BaseTypes_MD.asn
+        ${PROJECT_SOURCE_DIR}/asn1/TR103562v211.asn 
+        ${PROJECT_SOURCE_DIR}/asn1/EN302637-2v141-CAM.asn
+        ${PROJECT_SOURCE_DIR}/asn1/ISO_TS_19091_CPM.asn
+    )
 
     add_custom_command(OUTPUT ${_support_asn1_dir}
         DEPENDS "${ASN1C_SKELETON_DIR}"
@@ -91,23 +98,23 @@ if(VANETZA_ASN1_WITH_ASN1C)
             -P collect_asn1c_sources.cmake
         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} VERBATIM)
 
-    # add_custom_command(OUTPUT "${_md_asn1_dir}"
-    #     DEPENDS ${_md_asn1_files}
-    #     COMMAND ${CMAKE_COMMAND} -E make_directory ${_md_asn1_dir}
-    #     COMMAND ${ASN1C_EXECUTABLE} ${_asn1c_flags} -R -D ${_md_asn1_dir} ${_md_asn1_files}
-    #     COMMENT "Generating code from misbehavior (TR103460v211t) ASN.1 modules" VERBATIM)
-    # add_custom_command(OUTPUT "${_md_asn1_source_file}"
-    #     DEPENDS ${_md_asn1_dir}
-    #     COMMAND ${CMAKE_COMMAND} -DASN1C_OUTPUT_DIR=md -DASN1C_SOURCE_FILE=${_md_asn1_source_file}
-    #         -P collect_asn1c_sources.cmake
-    #     WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} VERBATIM)
+    add_custom_command(OUTPUT "${_md_asn1_dir}"
+        DEPENDS ${_md_asn1_files}
+        COMMAND ${CMAKE_COMMAND} -E make_directory ${_md_asn1_dir}
+        COMMAND ${ASN1C_EXECUTABLE} ${_asn1c_flags} -R -D ${_md_asn1_dir} ${_md_asn1_files}
+        COMMENT "Generating code from misbehavior (TR103460v211t) ASN.1 modules" VERBATIM)
+    add_custom_command(OUTPUT "${_md_asn1_source_file}"
+        DEPENDS ${_md_asn1_dir}
+        COMMAND ${CMAKE_COMMAND} -DASN1C_OUTPUT_DIR=md -DASN1C_SOURCE_FILE=${_md_asn1_source_file}
+            -P collect_asn1c_sources.cmake
+        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} VERBATIM)
 
     add_custom_target(generate_asn1c DEPENDS
         "${_support_asn1_dir}" "${_support_asn1_source_file}"
         "${_its_asn1_dir}" "${_its_asn1_source_file}"
         "${_pki_asn1_dir}" "${_pki_asn1_source_file}"
         "${_sec_asn1_dir}" "${_sec_asn1_source_file}"
-        # "${_md_asn1_dir}" "${_md_asn1_source_file}"
+        "${_md_asn1_dir}" "${_md_asn1_source_file}"
         VERBATIM)
     add_custom_command(TARGET generate_asn1c POST_BUILD
         COMMAND ${CMAKE_COMMAND} -DPROJECT_SOURCE_DIR=${PROJECT_SOURCE_DIR}
@@ -129,11 +136,11 @@ if(VANETZA_ASN1_WITH_ASN1C)
             -P ${CMAKE_CURRENT_SOURCE_DIR}/patch_asn1c_generated.cmake
         COMMENT "Patching generated security asn1c files"
         WORKING_DIRECTORY ${_sec_asn1_dir} VERBATIM)
-    # add_custom_command(TARGET generate_asn1c POST_BUILD
-    #     COMMAND ${CMAKE_COMMAND} -DPROJECT_SOURCE_DIR=${PROJECT_SOURCE_DIR}
-    #         -P ${CMAKE_CURRENT_SOURCE_DIR}/patch_asn1c_generated.cmake
-    #     COMMENT "Patching generated misbehavior asn1c files"
-    #     WORKING_DIRECTORY ${_md_asn1_dir} VERBATIM)
+    add_custom_command(TARGET generate_asn1c POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -DPROJECT_SOURCE_DIR=${PROJECT_SOURCE_DIR}
+            -P ${CMAKE_CURRENT_SOURCE_DIR}/patch_asn1c_generated.cmake
+        COMMENT "Patching generated misbehavior asn1c files"
+        WORKING_DIRECTORY ${_md_asn1_dir} VERBATIM)
 
     # wipe directory with generated files before generating
     add_custom_target(clean_asn1c
@@ -153,10 +160,10 @@ if(VANETZA_ASN1_WITH_ASN1C)
           -DASN1C_OUTPUT_DIR=${_sec_asn1_dir}
           -DASN1C_SOURCE_FILE=${_sec_asn1_source_file}
           -P clean_asn1c.cmake
-        # COMMAND ${CMAKE_COMMAND}
-        # -DASN1C_OUTPUT_DIR=${_md_asn1_dir}
-        # -DASN1C_SOURCE_FILE=${_md_asn1_source_file}
-        # -P clean_asn1c.cmake
+        COMMAND ${CMAKE_COMMAND}
+        -DASN1C_OUTPUT_DIR=${_md_asn1_dir}
+        -DASN1C_SOURCE_FILE=${_md_asn1_source_file}
+        -P clean_asn1c.cmake
         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} VERBATIM)
     add_dependencies(generate_asn1c clean_asn1c)
 endif()
@@ -193,7 +200,7 @@ endfunction()
 add_asn1_component(support)
 add_asn1_component(its)
 add_asn1_component(security)
-# add_asn1_component(md)
+add_asn1_component(md)
 add_asn1_component(pki)
 
 add_vanetza_component(asn1 asn1c_wrapper.cpp)

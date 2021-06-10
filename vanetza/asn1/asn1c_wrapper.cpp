@@ -9,6 +9,8 @@
 #include <memory>
 #include <stdexcept>
 #include <string>
+#include <vanetza/asn1/support/uper_decoder.h>
+#include <vanetza/asn1/support/uper_encoder.h>
 
 namespace vanetza
 {
