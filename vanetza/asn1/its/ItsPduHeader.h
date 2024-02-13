@@ -34,7 +34,11 @@ typedef enum ItsPduHeader__messageID {
 	ItsPduHeader__messageID_ssem	= 10,
 	ItsPduHeader__messageID_evcsn	= 11,
 	ItsPduHeader__messageID_saem	= 12,
-	ItsPduHeader__messageID_rtcmem	= 13
+    ItsPduHeader__messageID_rtcmem	= 13,
+    //https://www.etsi.org/deliver/etsi_tr/103500_103599/103562/02.01.01_60/tr_103562v020101p.pdf
+    //B.2.2 header
+    //Data setting and presentation requirements
+    ItsPduHeader__messageID_cpm	= 14
 } e_ItsPduHeader__messageID;
 
 /* ItsPduHeader */
