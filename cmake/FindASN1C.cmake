@@ -7,12 +7,12 @@ endif()
 
 find_path(ASN1C_SKELETON_DIR NAMES asn_application.c
     HINTS "${_asn1c_executable_path}/.."
-    PATH_SUFFIXES share/asn1c skeletons
+    PATH_SUFFIXES share/asn1c skeletons vanetza/asn1/support
     DOC "Directory containing generic asn1c skeleton files")
 
 include(FindPackageHandleStandardArgs)
 find_package_handle_standard_args(ASN1C
-    REQUIRED_VARS ASN1C_EXECUTABLE ASN1C_SKELETON_DIR
+    REQUIRED_VARS ASN1C_EXECUTABLE #ASN1C_SKELETON_DIR
     FOUND_VAR ASN1C_FOUND
     VERSION_VAR ASN1C_VERSION)
 

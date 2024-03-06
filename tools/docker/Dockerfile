@@ -15,6 +15,7 @@ RUN update_cmake.sh && apt-get update && \
         libgeographic-dev \
         libssl-dev \
         ninja-build \
+        asn1c \
     && rm -rf /var/lib/apt/lists/*
 COPY build_and_run_tests.sh /usr/local/bin/build_and_run_tests.sh
 RUN useradd -m build-user

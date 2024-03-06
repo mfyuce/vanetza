@@ -117,4 +117,4 @@ extern asn_TYPE_operation_t asn_OP_OPEN_TYPE;
 }
 #endif
 
-#endif	/* ASN_OPEN_TYPE_H */
+
